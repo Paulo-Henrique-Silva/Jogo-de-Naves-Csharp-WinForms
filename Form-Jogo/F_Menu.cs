@@ -16,5 +16,7 @@ namespace Form_Jogo
         {
             InitializeComponent();
         }
+
+        private void Btn_Sair_Click(object sender, EventArgs e) => Close();
     }
 }
