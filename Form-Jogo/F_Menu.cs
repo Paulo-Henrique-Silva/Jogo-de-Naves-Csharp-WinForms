@@ -17,6 +17,23 @@ namespace Form_Jogo
             InitializeComponent();
         }
 
+        private void Btn_Jogar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Btn_Instruções_Click(object sender, EventArgs e)
+        {
+            Pnl_Instruções.Visible = true;
+            Pnl_Instruções.BringToFront();
+        }
+
         private void Btn_Sair_Click(object sender, EventArgs e) => Close();
+
+        private void Btn_Entendi_Click(object sender, EventArgs e)
+        {
+            Pnl_Instruções.Visible = false;
+            Pnl_Instruções.SendToBack();
+        }
     }
 }
