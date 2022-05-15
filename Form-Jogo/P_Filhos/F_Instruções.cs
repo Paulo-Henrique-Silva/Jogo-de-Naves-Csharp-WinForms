@@ -15,14 +15,14 @@ namespace Form_Jogo.P_Filhos
         /// <summary>
         /// Formulário pai atual do projeto.
         /// </summary>
-        private F_Principal FormPai { get; }
+        private F_Principal FrmPai { get; }
 
         public F_Instruções(F_Principal formPai)
         {
             InitializeComponent();
-            FormPai = formPai;
+            FrmPai = formPai;
         }
 
-        private void Btn_Entendi_Click(object sender, EventArgs e) => FormPai.MudaForm(new F_Menu(FormPai));
+        private void Btn_Entendi_Click(object sender, EventArgs e) => FrmPai.MudaForm(new F_Menu(FrmPai));
     }
 }

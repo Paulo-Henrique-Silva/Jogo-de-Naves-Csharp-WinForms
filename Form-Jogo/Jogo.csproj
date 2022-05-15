@@ -52,6 +52,12 @@
     <Compile Include="P_Filhos\F_Instruções.Designer.cs">
       <DependentUpon>F_Instruções.cs</DependentUpon>
     </Compile>
+    <Compile Include="P_Filhos\F_Jogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_Filhos\F_Jogo.Designer.cs">
+      <DependentUpon>F_Jogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="P_Filhos\F_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="P_Filhos\F_Instruções.resx">
       <DependentUpon>F_Instruções.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_Filhos\F_Jogo.resx">
+      <DependentUpon>F_Jogo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="P_Filhos\F_Menu.resx">
       <DependentUpon>F_Menu.cs</DependentUpon>

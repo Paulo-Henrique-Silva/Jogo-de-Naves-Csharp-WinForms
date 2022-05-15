@@ -15,16 +15,19 @@ namespace Form_Jogo.P_Filhos
         /// <summary>
         /// Formulário pai atual do projeto.
         /// </summary>
-        private F_Principal FormPai { get; }
+        private F_Principal FrmPai { get; }
 
         public F_Menu(F_Principal formPai)
         {
             InitializeComponent();
-            FormPai = formPai;
+            FrmPai = formPai;
         }
 
-        private void Btn_Instruções_Click(object sender, EventArgs e) => FormPai.MudaForm(new F_Instruções(FormPai));
+        private void Btn_Jogar_Click(object sender, EventArgs e) => FrmPai.MudaForm(new F_Jogo(FrmPai));
 
-        private void Btn_Sair_Click(object sender, EventArgs e) => FormPai.Close();
+        private void Btn_Instruções_Click(object sender, EventArgs e) => FrmPai.MudaForm(new F_Instruções(FrmPai));
+
+        private void Btn_Sair_Click(object sender, EventArgs e) => FrmPai.Close();
+
     }
 }

@@ -80,6 +80,7 @@
             this.Btn_Jogar.TabIndex = 1;
             this.Btn_Jogar.Text = "Jogar";
             this.Btn_Jogar.UseVisualStyleBackColor = false;
+            this.Btn_Jogar.Click += new System.EventHandler(this.Btn_Jogar_Click);
             // 
             // Lbl_Titulo
             // 

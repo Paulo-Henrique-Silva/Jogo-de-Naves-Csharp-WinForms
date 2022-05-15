@@ -1,0 +1,124 @@
+﻿namespace Form_Jogo.P_Filhos
+{
+    partial class F_Jogo
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Jogo));
+            this.Pbx_Fundo1 = new System.Windows.Forms.PictureBox();
+            this.Pbx_Fundo2 = new System.Windows.Forms.PictureBox();
+            this.Bgw_TrocaFundo = new System.ComponentModel.BackgroundWorker();
+            this.Tmr_AmtVel = new System.Windows.Forms.Timer(this.components);
+            this.Btn_Sair = new System.Windows.Forms.Button();
+            this.Pbx_Nave = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Pbx_Fundo1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pbx_Fundo2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pbx_Nave)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // Pbx_Fundo1
+            // 
+            this.Pbx_Fundo1.Image = ((System.Drawing.Image)(resources.GetObject("Pbx_Fundo1.Image")));
+            this.Pbx_Fundo1.Location = new System.Drawing.Point(0, 0);
+            this.Pbx_Fundo1.Name = "Pbx_Fundo1";
+            this.Pbx_Fundo1.Size = new System.Drawing.Size(384, 461);
+            this.Pbx_Fundo1.TabIndex = 0;
+            this.Pbx_Fundo1.TabStop = false;
+            // 
+            // Pbx_Fundo2
+            // 
+            this.Pbx_Fundo2.Image = ((System.Drawing.Image)(resources.GetObject("Pbx_Fundo2.Image")));
+            this.Pbx_Fundo2.Location = new System.Drawing.Point(0, 461);
+            this.Pbx_Fundo2.Name = "Pbx_Fundo2";
+            this.Pbx_Fundo2.Size = new System.Drawing.Size(384, 461);
+            this.Pbx_Fundo2.TabIndex = 1;
+            this.Pbx_Fundo2.TabStop = false;
+            // 
+            // Bgw_TrocaFundo
+            // 
+            this.Bgw_TrocaFundo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.Bgw_TrocaFundo_DoWork);
+            // 
+            // Tmr_AmtVel
+            // 
+            this.Tmr_AmtVel.Interval = 8000;
+            this.Tmr_AmtVel.Tick += new System.EventHandler(this.Tmr_AmtVel_Tick);
+            // 
+            // Btn_Sair
+            // 
+            this.Btn_Sair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(142)))), ((int)(((byte)(23)))));
+            this.Btn_Sair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Btn_Sair.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Sair.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(255)))), ((int)(((byte)(249)))));
+            this.Btn_Sair.Location = new System.Drawing.Point(12, 12);
+            this.Btn_Sair.Name = "Btn_Sair";
+            this.Btn_Sair.Size = new System.Drawing.Size(50, 25);
+            this.Btn_Sair.TabIndex = 6;
+            this.Btn_Sair.UseVisualStyleBackColor = false;
+            // 
+            // Pbx_Nave
+            // 
+            this.Pbx_Nave.BackColor = System.Drawing.Color.Transparent;
+            this.Pbx_Nave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Pbx_Nave.Image = ((System.Drawing.Image)(resources.GetObject("Pbx_Nave.Image")));
+            this.Pbx_Nave.Location = new System.Drawing.Point(157, 363);
+            this.Pbx_Nave.Name = "Pbx_Nave";
+            this.Pbx_Nave.Size = new System.Drawing.Size(70, 80);
+            this.Pbx_Nave.TabIndex = 7;
+            this.Pbx_Nave.TabStop = false;
+            // 
+            // F_Jogo
+            // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(30)))));
+            this.ClientSize = new System.Drawing.Size(384, 461);
+            this.Controls.Add(this.Pbx_Nave);
+            this.Controls.Add(this.Btn_Sair);
+            this.Controls.Add(this.Pbx_Fundo2);
+            this.Controls.Add(this.Pbx_Fundo1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "F_Jogo";
+            this.Text = "F_Jogo";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.F_Jogo_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.F_Jogo_KeyUp);
+            ((System.ComponentModel.ISupportInitialize)(this.Pbx_Fundo1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pbx_Fundo2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pbx_Nave)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.PictureBox Pbx_Fundo1;
+        private System.Windows.Forms.PictureBox Pbx_Fundo2;
+        private System.ComponentModel.BackgroundWorker Bgw_TrocaFundo;
+        private System.Windows.Forms.Timer Tmr_AmtVel;
+        private System.Windows.Forms.Button Btn_Sair;
+        private System.Windows.Forms.PictureBox Pbx_Nave;
+    }
+}
