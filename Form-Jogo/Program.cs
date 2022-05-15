@@ -16,7 +16,7 @@ namespace Form_Jogo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new F_Menu());
+            Application.Run(new F_Principal());
         }
     }
 }
