@@ -18,54 +18,74 @@ namespace Form_Jogo.P_Filhos
         /// </summary>
         private F_Principal FrmPai { get; }
 
-        private int fundoVel = 1;
-
+        private int fundoVel;
+        private const int JOG_VEL = 5;
         private bool apertouDir, apertouEsq;
 
         public F_Jogo(F_Principal formPai)
         {
             InitializeComponent();
             FrmPai = formPai;
-
-            //Bgw_TrocaFundo.RunWorkerAsync();
-            //Tmr_AmtVel.Start();
         }
 
-        private void Bgw_TrocaFundo_DoWork(object sender, DoWorkEventArgs e)
+        private void Btn_Comecar_Click(object sender, EventArgs e)
         {
-            while (true)
-            {
-                Pbx_Fundo1.Top += fundoVel;
-                Pbx_Fundo2.Top += fundoVel;
+            fundoVel = 1;
 
-                if (apertouDir) Pbx_Nave.Left += 3;
-                if (apertouEsq) Pbx_Nave.Left -= 3;
+            Btn_Comecar.Visible = false;
 
-                if (Pbx_Fundo1.Top > Height) Pbx_Fundo1.Top = -Height;
-                if (Pbx_Fundo2.Top > Height) Pbx_Fundo2.Top = -Height;
-                Thread.Sleep(1);
-            }
+            Tmr_Jogo.Start();
+            Tmr_AmtDif.Start();
         }
 
-        private void Tmr_AmtVel_Tick(object sender, EventArgs e)
-        {
-            fundoVel += 1;
-        }
+        private void Btn_Sair_Click(object sender, EventArgs e) => FrmPai.MudaForm(new F_Menu(FrmPai));
 
+        /// <summary>
+        /// Checa se o usuário pressionou as teclas de movimento.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void F_Jogo_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Right)
+            if (e.KeyCode == Keys.D)
                 apertouDir = true;
-            if (e.KeyCode == Keys.Left)
+            if (e.KeyCode == Keys.A)
                 apertouEsq = true;
         }
 
         private void F_Jogo_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Right)
+            if (e.KeyCode == Keys.D)
                 apertouDir = false;
-            if (e.KeyCode == Keys.Left)
+            if (e.KeyCode == Keys.A)
                 apertouEsq = false;
+        }
+
+        /// <summary>
+        /// Movimenta os componentes do jogo a cada 1 milissegundo e conforme as ações do usuário.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Tmr_Jogo_Tick(object sender, EventArgs e)
+        {
+            Pbx_Fundo1.Top += fundoVel;
+            Pbx_Fundo2.Top += fundoVel;
+
+            if (apertouDir) Pbx_Nave.Left += JOG_VEL;
+            if (apertouEsq) Pbx_Nave.Left -= JOG_VEL;
+
+            if (Pbx_Fundo1.Top > Height) Pbx_Fundo1.Top = -Height;
+            if (Pbx_Fundo2.Top > Height) Pbx_Fundo2.Top = -Height;
+        }
+
+        /// <summary>
+        /// Método responsável por aumentar a dificuldade do jogo.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Tmr_AmtDif_Tick(object sender, EventArgs e)
+        {
+            fundoVel++;
         }
     }
 }

@@ -38,6 +38,7 @@ namespace Form_Jogo
             form.Show();
 
             FrmFilho = form;
+            Pnl_Principal.Focus();
         }
     }
 }
