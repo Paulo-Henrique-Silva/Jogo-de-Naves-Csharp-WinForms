@@ -33,6 +33,7 @@ namespace Form_Jogo.P_Filhos
             fundoVel = 1;
 
             Btn_Comecar.Visible = false;
+            Pbx_Inimigo.Visible = true;
 
             Tmr_Jogo.Start();
             Tmr_AmtDif.Start();

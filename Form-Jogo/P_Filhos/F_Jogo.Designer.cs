@@ -37,9 +37,11 @@
             this.Pbx_Nave = new System.Windows.Forms.PictureBox();
             this.Btn_Comecar = new System.Windows.Forms.Button();
             this.Tmr_AmtDif = new System.Windows.Forms.Timer(this.components);
+            this.Pbx_Inimigo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Pbx_Fundo1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pbx_Fundo2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pbx_Nave)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pbx_Inimigo)).BeginInit();
             this.SuspendLayout();
             // 
             // Pbx_Fundo1
@@ -109,11 +111,23 @@
             this.Tmr_AmtDif.Interval = 8000;
             this.Tmr_AmtDif.Tick += new System.EventHandler(this.Tmr_AmtDif_Tick);
             // 
+            // Pbx_Inimigo
+            // 
+            this.Pbx_Inimigo.BackColor = System.Drawing.Color.Transparent;
+            this.Pbx_Inimigo.Image = ((System.Drawing.Image)(resources.GetObject("Pbx_Inimigo.Image")));
+            this.Pbx_Inimigo.Location = new System.Drawing.Point(12, 43);
+            this.Pbx_Inimigo.Name = "Pbx_Inimigo";
+            this.Pbx_Inimigo.Size = new System.Drawing.Size(360, 68);
+            this.Pbx_Inimigo.TabIndex = 9;
+            this.Pbx_Inimigo.TabStop = false;
+            this.Pbx_Inimigo.Visible = false;
+            // 
             // F_Jogo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(384, 461);
+            this.Controls.Add(this.Pbx_Inimigo);
             this.Controls.Add(this.Btn_Comecar);
             this.Controls.Add(this.Pbx_Nave);
             this.Controls.Add(this.Btn_Sair);
@@ -128,6 +142,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Pbx_Fundo1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pbx_Fundo2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pbx_Nave)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pbx_Inimigo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -141,5 +156,6 @@
         private System.Windows.Forms.PictureBox Pbx_Nave;
         private System.Windows.Forms.Button Btn_Comecar;
         private System.Windows.Forms.Timer Tmr_AmtDif;
+        private System.Windows.Forms.PictureBox Pbx_Inimigo;
     }
 }
