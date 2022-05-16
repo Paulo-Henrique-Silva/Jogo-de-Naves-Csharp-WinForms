@@ -68,12 +68,15 @@ namespace Form_Jogo.P_Filhos
         /// <param name="e"></param>
         private void Tmr_Jogo_Tick(object sender, EventArgs e)
         {
+            //Movimenta o background
             Pbx_Fundo1.Top += fundoVel;
             Pbx_Fundo2.Top += fundoVel;
 
-            if (apertouDir) Pbx_Nave.Left += JOG_VEL;
-            if (apertouEsq) Pbx_Nave.Left -= JOG_VEL;
+            //movimenta a nave principal
+            if (apertouDir && Pbx_Nave.Right < Width) Pbx_Nave.Left += JOG_VEL;
+            if (apertouEsq && Pbx_Nave.Left > 0) Pbx_Nave.Left -= JOG_VEL;
 
+            //troca as fotos de fundo
             if (Pbx_Fundo1.Top > Height) Pbx_Fundo1.Top = -Height;
             if (Pbx_Fundo2.Top > Height) Pbx_Fundo2.Top = -Height;
         }

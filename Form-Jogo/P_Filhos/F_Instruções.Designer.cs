@@ -56,7 +56,7 @@
             this.Lbl_Instruções2.Name = "Lbl_Instruções2";
             this.Lbl_Instruções2.Size = new System.Drawing.Size(191, 90);
             this.Lbl_Instruções2.TabIndex = 4;
-            this.Lbl_Instruções2.Text = "Utlize as setas do teclado para mover a nave horizontalmente. ";
+            this.Lbl_Instruções2.Text = "Utlize as teclas \"A\" e \"D\" do teclado para mover a nave horizontalmente. ";
             this.Lbl_Instruções2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Lbl_Instruções1
