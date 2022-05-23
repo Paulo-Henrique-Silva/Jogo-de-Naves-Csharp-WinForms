@@ -41,8 +41,25 @@ namespace Form_Jogo.P_Filhos
             Btn_Comecar.Visible = false;
             Pbx_Inimigo.Visible = true;
 
+            Pbx_Tiro1.Visible = true;
+            Pbx_Tiro2.Visible = true;
+            Pbx_Nave.Visible = true;
+
             Tmr_Jogo.Start();
             Tmr_AmtDif.Start();
+        }
+
+        private void FimJogo()
+        {
+            Btn_Comecar.Visible = true;
+            Pbx_Inimigo.Visible = false;
+
+            Pbx_Tiro1.Visible = false;
+            Pbx_Tiro2.Visible = false;
+            Pbx_Nave.Visible = false;
+
+            Tmr_Jogo.Stop();
+            Tmr_AmtDif.Stop();
         }
 
         private void Btn_Sair_Click(object sender, EventArgs e) => FrmPai.MudaForm(new F_Menu(FrmPai));
@@ -142,7 +159,7 @@ namespace Form_Jogo.P_Filhos
         {
             if ((TiposTiros)tiro.Tag == TiposTiros.TiroComum) tiro.Top += fundoVel;
             else if ((TiposTiros)tiro.Tag == TiposTiros.TiroGrande) tiro.Top += fundoVel / 2;
-            else tiro.Top += (int)Math.Ceiling(1.5 * fundoVel);
+            else tiro.Top += fundoVel + fundoVel / 2;
         }
 
         /// <summary>
@@ -165,6 +182,10 @@ namespace Form_Jogo.P_Filhos
 
             if (Pbx_Tiro1.Top > Height) MudaTiros(Pbx_Tiro1);
             if (Pbx_Tiro2.Top > Height) MudaTiros(Pbx_Tiro2);
+
+            ///detecta se a nava principal encosta em um dos tiros.
+            if (Pbx_Nave.Bounds.IntersectsWith(Pbx_Tiro1.Bounds) || Pbx_Nave.Bounds.IntersectsWith(Pbx_Tiro2.Bounds))
+                FimJogo();
 
             //troca as fotos de fundo
             if (Pbx_Fundo1.Top > Height) Pbx_Fundo1.Top = -Height;

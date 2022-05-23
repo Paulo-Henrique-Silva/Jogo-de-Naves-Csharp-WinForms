@@ -118,6 +118,7 @@
             this.Pbx_Nave.Size = new System.Drawing.Size(55, 80);
             this.Pbx_Nave.TabIndex = 7;
             this.Pbx_Nave.TabStop = false;
+            this.Pbx_Nave.Visible = false;
             // 
             // Btn_Comecar
             // 
@@ -247,6 +248,7 @@
             this.Pbx_Tiro1.Size = new System.Drawing.Size(15, 68);
             this.Pbx_Tiro1.TabIndex = 19;
             this.Pbx_Tiro1.TabStop = false;
+            this.Pbx_Tiro1.Visible = false;
             // 
             // pictureBox11
             // 
@@ -267,6 +269,7 @@
             this.Pbx_Tiro2.Size = new System.Drawing.Size(15, 68);
             this.Pbx_Tiro2.TabIndex = 21;
             this.Pbx_Tiro2.TabStop = false;
+            this.Pbx_Tiro2.Visible = false;
             // 
             // pictureBox13
             // 
