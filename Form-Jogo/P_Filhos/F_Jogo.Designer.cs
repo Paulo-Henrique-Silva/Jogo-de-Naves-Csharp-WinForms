@@ -135,7 +135,7 @@
             // 
             // Tmr_AmtDif
             // 
-            this.Tmr_AmtDif.Interval = 8000;
+            this.Tmr_AmtDif.Interval = 10000;
             this.Tmr_AmtDif.Tick += new System.EventHandler(this.Tmr_AmtDif_Tick);
             // 
             // Pbx_Inimigo
