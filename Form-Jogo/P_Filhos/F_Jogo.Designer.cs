@@ -35,7 +35,7 @@
             this.Tmr_Jogo = new System.Windows.Forms.Timer(this.components);
             this.Btn_Sair = new System.Windows.Forms.Button();
             this.Pbx_Nave = new System.Windows.Forms.PictureBox();
-            this.Btn_Comecar = new System.Windows.Forms.Button();
+            this.Btn_ComecarJogo = new System.Windows.Forms.Button();
             this.Tmr_AmtDif = new System.Windows.Forms.Timer(this.components);
             this.Pbx_Inimigo = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -122,17 +122,17 @@
             // 
             // Btn_Comecar
             // 
-            this.Btn_Comecar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(142)))), ((int)(((byte)(23)))));
-            this.Btn_Comecar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Btn_Comecar.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Comecar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(255)))), ((int)(((byte)(249)))));
-            this.Btn_Comecar.Location = new System.Drawing.Point(90, 151);
-            this.Btn_Comecar.Name = "Btn_Comecar";
-            this.Btn_Comecar.Size = new System.Drawing.Size(206, 95);
-            this.Btn_Comecar.TabIndex = 8;
-            this.Btn_Comecar.Text = "Começar";
-            this.Btn_Comecar.UseVisualStyleBackColor = false;
-            this.Btn_Comecar.Click += new System.EventHandler(this.Btn_Comecar_Click);
+            this.Btn_ComecarJogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(142)))), ((int)(((byte)(23)))));
+            this.Btn_ComecarJogo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Btn_ComecarJogo.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_ComecarJogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(255)))), ((int)(((byte)(249)))));
+            this.Btn_ComecarJogo.Location = new System.Drawing.Point(90, 151);
+            this.Btn_ComecarJogo.Name = "Btn_Comecar";
+            this.Btn_ComecarJogo.Size = new System.Drawing.Size(206, 95);
+            this.Btn_ComecarJogo.TabIndex = 8;
+            this.Btn_ComecarJogo.Text = "Começar";
+            this.Btn_ComecarJogo.UseVisualStyleBackColor = false;
+            this.Btn_ComecarJogo.Click += new System.EventHandler(this.ComecarJogo);
             // 
             // Tmr_AmtDif
             // 
@@ -311,7 +311,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Pbx_Inimigo);
-            this.Controls.Add(this.Btn_Comecar);
+            this.Controls.Add(this.Btn_ComecarJogo);
             this.Controls.Add(this.Pbx_Nave);
             this.Controls.Add(this.Btn_Sair);
             this.Controls.Add(this.Pbx_Fundo1);
@@ -351,7 +351,7 @@
         private System.Windows.Forms.Timer Tmr_Jogo;
         private System.Windows.Forms.Button Btn_Sair;
         private System.Windows.Forms.PictureBox Pbx_Nave;
-        private System.Windows.Forms.Button Btn_Comecar;
+        private System.Windows.Forms.Button Btn_ComecarJogo;
         private System.Windows.Forms.Timer Tmr_AmtDif;
         private System.Windows.Forms.PictureBox Pbx_Inimigo;
         private System.Windows.Forms.PictureBox pictureBox1;

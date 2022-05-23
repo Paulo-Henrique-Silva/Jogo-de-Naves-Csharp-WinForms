@@ -11,6 +11,9 @@ using System.Threading;
 
 namespace Form_Jogo.P_Filhos
 {
+    /// <summary>
+    /// Separa os tipos existentes de tiros que existem no jogo.
+    /// </summary>
     enum TiposTiros { TiroComum = 1, TiroGrande, TiroRapido }
 
     public partial class F_Jogo : Form
@@ -30,7 +33,7 @@ namespace Form_Jogo.P_Filhos
             FrmPai = formPai;
         }
 
-        private void Btn_Comecar_Click(object sender, EventArgs e)
+        private void ComecarJogo(object sender, EventArgs e)
         {
             fundoVel = 2;
 
@@ -38,7 +41,7 @@ namespace Form_Jogo.P_Filhos
             Thread.Sleep(30); //sleep de 20 miliseegundos para diferenciar as posições inicias
             MudaTiros(Pbx_Tiro2);
 
-            Btn_Comecar.Visible = false;
+            Btn_ComecarJogo.Visible = false;
             Pbx_Inimigo.Visible = true;
 
             Pbx_Tiro1.Visible = true;
@@ -51,7 +54,7 @@ namespace Form_Jogo.P_Filhos
 
         private void FimJogo()
         {
-            Btn_Comecar.Visible = true;
+            Btn_ComecarJogo.Visible = true;
             Pbx_Inimigo.Visible = false;
 
             Pbx_Tiro1.Visible = false;
@@ -104,7 +107,7 @@ namespace Form_Jogo.P_Filhos
 
                 case 2:
                     tiro.Tag = TiposTiros.TiroGrande;
-                    tiro.Size = new Size(30, 68);
+                    tiro.Size = new Size(30, 68); //o tamanho maior é proposital
                     tiro.BackColor = Color.DarkOliveGreen;
                     break;
 
@@ -115,7 +118,7 @@ namespace Form_Jogo.P_Filhos
                     break;
             }
 
-            //Coloca-o em uma nova posição.
+            //Coloca-o em uma nova posição, conforme em um dos canhões.
             switch (rand.Next(1, 8))
             {
                 case 1:
@@ -147,6 +150,7 @@ namespace Form_Jogo.P_Filhos
                     break;
             }
 
+            //como o tiro grande é maior que os outros tiros, ele ajusta a posiçao para ficar conforme o canhão da nave inimiga.
             if ((TiposTiros)tiro.Tag == TiposTiros.TiroGrande)
                 tiro.Left -= 8;
         }
@@ -193,7 +197,7 @@ namespace Form_Jogo.P_Filhos
         }
 
         /// <summary>
-        /// Método responsável por aumentar a dificuldade do jogo.
+        /// Método responsável por aumentar a velocidade do fundo do jogo e cosequentemente a velocidade.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
