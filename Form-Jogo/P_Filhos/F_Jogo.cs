@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Threading;
 
 namespace Form_Jogo.P_Filhos
 {
@@ -19,7 +18,7 @@ namespace Form_Jogo.P_Filhos
         private F_Principal FrmPai { get; }
 
         private int fundoVel;
-        private const int JOG_VEL = 5;
+        private const int JOG_VEL = 12;
         private bool apertouDir, apertouEsq;
 
         public F_Jogo(F_Principal formPai)
@@ -62,6 +61,43 @@ namespace Form_Jogo.P_Filhos
                 apertouEsq = false;
         }
 
+        private void MudaPosTiros(PictureBox tiro)
+        {
+            Random rand = new Random();
+
+            //Coloca 
+            switch (rand.Next(1, 8))
+            {
+                case 1:
+                    tiro.Location = new Point(20, 43);
+                    break;
+
+                case 2:
+                    tiro.Location = new Point(75, 43);
+                    break;
+
+                case 3:
+                    tiro.Location = new Point(130, 43);
+                    break;
+
+                case 4:
+                    tiro.Location = new Point(185, 43);
+                    break;
+
+                case 5:
+                    tiro.Location = new Point(240, 43);
+                    break;
+
+                case 6:
+                    tiro.Location = new Point(295, 43);
+                    break;
+
+                case 7:
+                    tiro.Location = new Point(350, 43);
+                    break;
+            }
+        }
+
         /// <summary>
         /// Movimenta os componentes do jogo a cada 1 milissegundo e conforme as ações do usuário.
         /// </summary>
@@ -73,9 +109,13 @@ namespace Form_Jogo.P_Filhos
             Pbx_Fundo1.Top += fundoVel;
             Pbx_Fundo2.Top += fundoVel;
 
+            Pbx_Tiro1.Top += fundoVel;
+
             //movimenta a nave principal
             if (apertouDir && Pbx_Nave.Right < Width) Pbx_Nave.Left += JOG_VEL;
             if (apertouEsq && Pbx_Nave.Left > 0) Pbx_Nave.Left -= JOG_VEL;
+
+            if (Pbx_Tiro1.Top > Height) MudaPosTiros(Pbx_Tiro1);
 
             //troca as fotos de fundo
             if (Pbx_Fundo1.Top > Height) Pbx_Fundo1.Top = -Height;
