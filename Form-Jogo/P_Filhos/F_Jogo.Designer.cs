@@ -83,12 +83,11 @@
             // 
             // Pbx_Nave
             // 
-            this.Pbx_Nave.BackColor = System.Drawing.Color.Transparent;
+            this.Pbx_Nave.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Pbx_Nave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Pbx_Nave.Image = ((System.Drawing.Image)(resources.GetObject("Pbx_Nave.Image")));
-            this.Pbx_Nave.Location = new System.Drawing.Point(157, 363);
+            this.Pbx_Nave.Location = new System.Drawing.Point(166, 369);
             this.Pbx_Nave.Name = "Pbx_Nave";
-            this.Pbx_Nave.Size = new System.Drawing.Size(70, 80);
+            this.Pbx_Nave.Size = new System.Drawing.Size(55, 80);
             this.Pbx_Nave.TabIndex = 7;
             this.Pbx_Nave.TabStop = false;
             // 
@@ -98,7 +97,7 @@
             this.Btn_Comecar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Btn_Comecar.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Comecar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(255)))), ((int)(((byte)(249)))));
-            this.Btn_Comecar.Location = new System.Drawing.Point(91, 151);
+            this.Btn_Comecar.Location = new System.Drawing.Point(90, 151);
             this.Btn_Comecar.Name = "Btn_Comecar";
             this.Btn_Comecar.Size = new System.Drawing.Size(206, 95);
             this.Btn_Comecar.TabIndex = 8;
@@ -113,8 +112,7 @@
             // 
             // Pbx_Inimigo
             // 
-            this.Pbx_Inimigo.BackColor = System.Drawing.Color.Transparent;
-            this.Pbx_Inimigo.Image = ((System.Drawing.Image)(resources.GetObject("Pbx_Inimigo.Image")));
+            this.Pbx_Inimigo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Pbx_Inimigo.Location = new System.Drawing.Point(12, 43);
             this.Pbx_Inimigo.Name = "Pbx_Inimigo";
             this.Pbx_Inimigo.Size = new System.Drawing.Size(360, 68);
