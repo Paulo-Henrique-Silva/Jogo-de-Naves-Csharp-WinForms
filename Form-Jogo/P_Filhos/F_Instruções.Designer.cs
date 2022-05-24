@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Instruções));
             this.Btn_Entendi = new System.Windows.Forms.Button();
             this.Lbl_Instruções2 = new System.Windows.Forms.Label();
             this.Lbl_Instruções1 = new System.Windows.Forms.Label();
             this.Lbl_TituloInstruções = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Btn_Entendi
@@ -85,11 +88,21 @@
             this.Lbl_TituloInstruções.Text = "Instruções do Jogo";
             this.Lbl_TituloInstruções.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(60, 284);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(55, 80);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // F_Instruções
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(384, 461);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Lbl_Instruções1);
             this.Controls.Add(this.Lbl_Instruções2);
             this.Controls.Add(this.Btn_Entendi);
@@ -97,6 +110,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "F_Instruções";
             this.Text = "F_Instruções";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -106,5 +120,6 @@
         private System.Windows.Forms.Label Lbl_Instruções2;
         private System.Windows.Forms.Label Lbl_Instruções1;
         private System.Windows.Forms.Label Lbl_TituloInstruções;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

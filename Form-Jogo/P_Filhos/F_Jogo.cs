@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Media;
 
 namespace Form_Jogo.P_Filhos
 {
@@ -38,9 +39,10 @@ namespace Form_Jogo.P_Filhos
             fundoVel = 2;
 
             MudaTiros(Pbx_Tiro1);
-            Thread.Sleep(30); //sleep de 20 miliseegundos para diferenciar as posições inicias
+            Thread.Sleep(30); //sleep para diferenciar as posições inicias
             MudaTiros(Pbx_Tiro2);
 
+            Lbl_FimJogo.Visible = false;
             Btn_ComecarJogo.Visible = false;
             Pbx_Inimigo.Visible = true;
 
@@ -54,6 +56,7 @@ namespace Form_Jogo.P_Filhos
 
         private void FimJogo()
         {
+            Lbl_FimJogo.Visible = true;
             Btn_ComecarJogo.Visible = true;
             Pbx_Inimigo.Visible = false;
 
@@ -63,9 +66,16 @@ namespace Form_Jogo.P_Filhos
 
             Tmr_Jogo.Stop();
             Tmr_AmtDif.Stop();
+
+            new SoundPlayer(Properties.Resources.somFimJogo).Play();
         }
 
-        private void Btn_Sair_Click(object sender, EventArgs e) => FrmPai.MudaForm(new F_Menu(FrmPai));
+        private void Btn_Sair_Click(object sender, EventArgs e)
+        {
+            Tmr_Jogo.Stop();
+            Tmr_AmtDif.Stop();
+            FrmPai.MudaForm(new F_Menu(FrmPai));
+        }
 
         /// <summary>
         /// Checa se o usuário pressionou as teclas de movimento.
@@ -108,7 +118,7 @@ namespace Form_Jogo.P_Filhos
                 case 2:
                     tiro.Tag = TiposTiros.TiroGrande;
                     tiro.Size = new Size(30, 68); //o tamanho maior é proposital
-                    tiro.BackColor = Color.DarkOliveGreen;
+                    tiro.BackColor = Color.DarkGreen;
                     break;
 
                 case 3:
@@ -153,6 +163,8 @@ namespace Form_Jogo.P_Filhos
             //como o tiro grande é maior que os outros tiros, ele ajusta a posiçao para ficar conforme o canhão da nave inimiga.
             if ((TiposTiros)tiro.Tag == TiposTiros.TiroGrande)
                 tiro.Left -= 8;
+
+            new SoundPlayer(Properties.Resources.tiroSom).Play();
         }
 
         /// <summary>
@@ -167,7 +179,7 @@ namespace Form_Jogo.P_Filhos
         }
 
         /// <summary>
-        /// Movimenta os componentes do jogo a cada 1 milissegundo e conforme as ações do usuário.
+        /// Movimenta os componentes do jogo conforme as ações do usuário.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
