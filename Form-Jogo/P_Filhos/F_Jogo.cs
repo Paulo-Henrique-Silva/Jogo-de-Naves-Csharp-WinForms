@@ -24,9 +24,11 @@ namespace Form_Jogo.P_Filhos
         /// </summary>
         private F_Principal FrmPai { get; }
 
-        private int fundoVel;
-        private const int JOG_VEL = 12;
-        private bool apertouDir, apertouEsq;
+        private int fundoVelocidade;
+
+        private const int JOG_VELOCIDADE = 12;
+
+        private bool apertouDireita, apertouEsquerda;
 
         public F_Jogo(F_Principal formPai)
         {
@@ -36,10 +38,10 @@ namespace Form_Jogo.P_Filhos
 
         private void ComecarJogo(object sender, EventArgs e)
         {
-            fundoVel = 2;
+            fundoVelocidade = 2;
 
             MudaTiros(Pbx_Tiro1);
-            Thread.Sleep(30); //sleep para diferenciar as posições inicias
+            Thread.Sleep(50); //sleep para diferenciar as posições inicias
             MudaTiros(Pbx_Tiro2);
 
             Lbl_FimJogo.Visible = false;
@@ -85,17 +87,17 @@ namespace Form_Jogo.P_Filhos
         private void F_Jogo_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.D)
-                apertouDir = true;
+                apertouDireita = true;
             if (e.KeyCode == Keys.A)
-                apertouEsq = true;
+                apertouEsquerda = true;
         }
 
         private void F_Jogo_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.D)
-                apertouDir = false;
+                apertouDireita = false;
             if (e.KeyCode == Keys.A)
-                apertouEsq = false;
+                apertouEsquerda = false;
         }
 
         /// <summary>
@@ -104,10 +106,11 @@ namespace Form_Jogo.P_Filhos
         /// <param name="tiro"></param>
         private void MudaTiros(PictureBox tiro)
         {
-            Random rand = new Random();
+            //Cria dois random para garantir maior aleatoridade.
+            Random random = new Random();
 
             //muda o tipo do tiro, assim como as características.
-            switch (rand.Next(1, 4))
+            switch (random.Next(1, 4))
             {
                 case 1:
                     tiro.Tag = TiposTiros.TiroComum;
@@ -129,7 +132,7 @@ namespace Form_Jogo.P_Filhos
             }
 
             //Coloca-o em uma nova posição, conforme em um dos canhões.
-            switch (rand.Next(1, 8))
+            switch (random.Next(1, 8))
             {
                 case 1:
                     tiro.Location = new Point(20, 43);
@@ -173,9 +176,18 @@ namespace Form_Jogo.P_Filhos
         /// <param name="tiro"></param>
         private void MoveTiro(PictureBox tiro)
         {
-            if ((TiposTiros)tiro.Tag == TiposTiros.TiroComum) tiro.Top += fundoVel;
-            else if ((TiposTiros)tiro.Tag == TiposTiros.TiroGrande) tiro.Top += fundoVel / 2;
-            else tiro.Top += fundoVel + fundoVel / 2;
+            if ((TiposTiros)tiro.Tag == TiposTiros.TiroComum)
+            {
+                tiro.Top += fundoVelocidade;
+            }
+            else if ((TiposTiros)tiro.Tag == TiposTiros.TiroGrande)
+            {
+                tiro.Top += fundoVelocidade / 2;
+            }
+            else
+            {
+                tiro.Top += fundoVelocidade + fundoVelocidade / 2;
+            }
         }
 
         /// <summary>
@@ -186,15 +198,15 @@ namespace Form_Jogo.P_Filhos
         private void Tmr_Jogo_Tick(object sender, EventArgs e)
         {
             //Movimenta o background
-            Pbx_Fundo1.Top += fundoVel;
-            Pbx_Fundo2.Top += fundoVel;
+            Pbx_Fundo1.Top += fundoVelocidade;
+            Pbx_Fundo2.Top += fundoVelocidade;
 
             MoveTiro(Pbx_Tiro1);
             MoveTiro(Pbx_Tiro2);
 
             //movimenta a nave principal
-            if (apertouDir && Pbx_Nave.Right < Width) Pbx_Nave.Left += JOG_VEL;
-            if (apertouEsq && Pbx_Nave.Left > 0) Pbx_Nave.Left -= JOG_VEL;
+            if (apertouDireita && Pbx_Nave.Right < Width) Pbx_Nave.Left += JOG_VELOCIDADE;
+            if (apertouEsquerda && Pbx_Nave.Left > 0) Pbx_Nave.Left -= JOG_VELOCIDADE;
 
             if (Pbx_Tiro1.Top > Height) MudaTiros(Pbx_Tiro1);
             if (Pbx_Tiro2.Top > Height) MudaTiros(Pbx_Tiro2);
@@ -215,7 +227,7 @@ namespace Form_Jogo.P_Filhos
         /// <param name="e"></param>
         private void Tmr_AmtDif_Tick(object sender, EventArgs e)
         {
-            fundoVel++;
+            fundoVelocidade++;
         }
     }
 }
